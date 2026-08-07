@@ -1,0 +1,12 @@
+# Tested with Python 3.12.7 (see docs/REPRODUCIBILITY.md for the exact
+# fresh-venv installation test this file was verified against).
+torch==2.11.0
+torch-geometric==2.7.0
+networkx==3.6.1
+numpy>=2.0,<3.0
+joblib>=1.4,<2.0
+scikit-learn>=1.4,<2.0
+
+# Development / test only (not needed to reproduce the paper's numbers):
+pytest>=8.0
+ruff>=0.6

@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "edgegirth"
+version = "1.0.0"
+description = "Edge-girth graph neural network: reproduction code and frozen results for the accompanying paper."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = { text = "MIT" }
+dependencies = [
+    "torch==2.11.0",
+    "torch-geometric==2.7.0",
+    "networkx==3.6.1",
+    "numpy>=2.0,<3.0",
+    "joblib>=1.4,<2.0",
+    "scikit-learn>=1.4,<2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.6"]
+notebook = ["jupyter>=1.0", "pandas>=2.0"]
+
+[tool.setuptools.packages.find]
+include = ["edgegirth*"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+
+[tool.pytest.ini_options]
+testpaths = ["edgegirth/tests"]
